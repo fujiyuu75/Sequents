@@ -65,3 +65,14 @@ fastlane/report.xml
 fastlane/Preview.html
 fastlane/screenshots
 fastlane/test_output
+
+
+# Original
+#
+#
+*.iml
+
+/.idea/workspace.xml
+/.idea/libraries
+.DS_Store
+.idea
