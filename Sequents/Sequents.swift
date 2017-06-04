@@ -14,13 +14,14 @@ open class Sequents {
     private var startOffset: Int
     private var duration: Int
     private var delay: Int
-//    private let Direction direction
+    var direction: Direction
 //    private var animId: Int
 
     open class Builder {
         fileprivate var offset = 100
         fileprivate var duration = 500
         fileprivate var delay = 0
+        fileprivate var direction = Direction.forward
         fileprivate var origin: UIView
 
         init(origin: UIView) {
@@ -42,6 +43,11 @@ open class Sequents {
             return self
         }
 
+        open func flow(flow: Direction) -> Builder {
+            self.direction = flow
+            return self
+        }
+
         open func start() -> Sequents {
             return Sequents(builder: self)
         }
@@ -55,12 +61,16 @@ open class Sequents {
         self.startOffset = builder.offset
         self.duration = builder.duration
         self.delay = builder.delay
-//        self.direction = builder
+        self.direction = builder.direction
 //        self.animId = builder.animId
 
         let origin: UIView = builder.origin
         print("origin is ")
         print(origin)
+
+        fetchChildLayouts(views: origin)
+        arrangeLayouts(viewList: self.viewList)
+        setAnimation()
     }
 
     private func fetchChildLayouts(views: UIView) {
@@ -82,7 +92,16 @@ open class Sequents {
         }
     }
 
-//    private func arrangeLayouts() -> [UIView] {
-//        switch
-//    }
+    private func arrangeLayouts(viewList: [UIView]) -> [UIView] {
+        switch direction {
+        case Direction.backward:
+            return viewList.reversed()
+        default: break
+        }
+        return viewList
+    }
+
+    private func setAnimation() {
+        
+    }
 }
