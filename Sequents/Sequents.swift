@@ -7,7 +7,82 @@
 //
 
 import Foundation
+import UIKit
 
 open class Sequents {
-    open var isSequent = true
+    private var viewList = [UIView]()
+    private var startOffset: Int
+    private var duration: Int
+    private var delay: Int
+//    private let Direction direction
+//    private var animId: Int
+
+    open class Builder {
+        fileprivate var offset = 100
+        fileprivate var duration = 500
+        fileprivate var delay = 0
+        fileprivate var origin: UIView
+
+        init(origin: UIView) {
+            self.origin = origin
+        }
+
+        open func offset(offset: Int) -> Builder {
+            self.offset = offset
+            return self
+        }
+
+        open func duration(duration: Int) -> Builder {
+            self.duration = duration
+            return self
+        }
+
+        open func delay(delay: Int) -> Builder {
+            self.delay = delay
+            return self
+        }
+
+        open func start() -> Sequents {
+            return Sequents(builder: self)
+        }
+    }
+
+    open static func origin(origin: UIView) -> Builder {
+        return Builder(origin: origin)
+    }
+
+    init(builder: Builder) {
+        self.startOffset = builder.offset
+        self.duration = builder.duration
+        self.delay = builder.delay
+//        self.direction = builder
+//        self.animId = builder.animId
+
+        let origin: UIView = builder.origin
+        print("origin is ")
+        print(origin)
+    }
+
+    private func fetchChildLayouts(views: UIView) {
+        guard views.subviews.count != 0 else {
+            return
+        }
+
+        for view in views.subviews where view.subviews.count != 0 {
+
+        }
+
+        for view in views.subviews {
+            if view.subviews.count != 0 {
+                fetchChildLayouts(views: view)
+            } else if !view.isHidden {
+                // TODO: いったんviewを非表示にさせる。
+                viewList.append(view)
+            }
+        }
+    }
+
+//    private func arrangeLayouts() -> [UIView] {
+//        switch
+//    }
 }
