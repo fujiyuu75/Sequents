@@ -67,9 +67,10 @@ open class Sequents {
         let origin: UIView = builder.origin
         print("origin is ")
         print(origin)
-
         fetchChildLayouts(views: origin)
-        arrangeLayouts(viewList: self.viewList)
+
+        self.viewList = arrangeLayouts(viewList: viewList)
+
         setAnimation()
     }
 
@@ -102,6 +103,6 @@ open class Sequents {
     }
 
     private func setAnimation() {
-        
+
     }
 }
