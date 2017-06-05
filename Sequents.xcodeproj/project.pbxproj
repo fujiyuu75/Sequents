@@ -11,6 +11,7 @@
 		F12A10D11EDD0148002232B2 /* SequentsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F12A10D01EDD0148002232B2 /* SequentsTests.swift */; };
 		F12A10D31EDD0148002232B2 /* Sequents.h in Headers */ = {isa = PBXBuildFile; fileRef = F12A10C51EDD0147002232B2 /* Sequents.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		F1A739F31EDD38D300415844 /* Sequents.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1A739F21EDD38D300415844 /* Sequents.swift */; };
+		F1AAC6481EE429E900E1B967 /* Direction.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1AAC6471EE429E900E1B967 /* Direction.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -31,6 +32,7 @@
 		F12A10D01EDD0148002232B2 /* SequentsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SequentsTests.swift; sourceTree = "<group>"; };
 		F12A10D21EDD0148002232B2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F1A739F21EDD38D300415844 /* Sequents.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Sequents.swift; sourceTree = "<group>"; };
+		F1AAC6471EE429E900E1B967 /* Direction.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Direction.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -76,6 +78,7 @@
 				F12A10C51EDD0147002232B2 /* Sequents.h */,
 				F12A10C61EDD0147002232B2 /* Info.plist */,
 				F1A739F21EDD38D300415844 /* Sequents.swift */,
+				F1AAC6471EE429E900E1B967 /* Direction.swift */,
 			);
 			path = Sequents;
 			sourceTree = "<group>";
@@ -202,6 +205,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F1A739F31EDD38D300415844 /* Sequents.swift in Sources */,
+				F1AAC6481EE429E900E1B967 /* Direction.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

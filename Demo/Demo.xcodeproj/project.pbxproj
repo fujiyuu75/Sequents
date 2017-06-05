@@ -15,6 +15,7 @@
 		F1619EB31EE2770E0067BE84 /* DemoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1619EB21EE2770E0067BE84 /* DemoTests.swift */; };
 		F1619EBE1EE2770E0067BE84 /* DemoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1619EBD1EE2770E0067BE84 /* DemoUITests.swift */; };
 		F1619ECE1EE277F90067BE84 /* Sequents.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1619ECC1EE2774C0067BE84 /* Sequents.swift */; };
+		F1AAC64C1EE42A7800E1B967 /* Direction.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1AAC64B1EE42A7800E1B967 /* Direction.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +50,7 @@
 		F1619EBD1EE2770E0067BE84 /* DemoUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DemoUITests.swift; sourceTree = "<group>"; };
 		F1619EBF1EE2770E0067BE84 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F1619ECC1EE2774C0067BE84 /* Sequents.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Sequents.swift; path = ../Sequents/Sequents.swift; sourceTree = "<group>"; };
+		F1AAC64B1EE42A7800E1B967 /* Direction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Direction.swift; path = ../Sequents/Direction.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -131,6 +133,7 @@
 		F1619ECB1EE2774C0067BE84 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				F1AAC64B1EE42A7800E1B967 /* Direction.swift */,
 				F1619ECC1EE2774C0067BE84 /* Sequents.swift */,
 			);
 			name = Frameworks;
@@ -273,6 +276,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F1AAC64C1EE42A7800E1B967 /* Direction.swift in Sources */,
 				F1619ECE1EE277F90067BE84 /* Sequents.swift in Sources */,
 				F1619EA01EE2770E0067BE84 /* ViewController.swift in Sources */,
 				F1619E9E1EE2770E0067BE84 /* AppDelegate.swift in Sources */,
@@ -526,6 +530,7 @@
 				F1619EC41EE2770E0067BE84 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		F1619EC51EE2770E0067BE84 /* Build configuration list for PBXNativeTarget "DemoTests" */ = {
 			isa = XCConfigurationList;
@@ -534,6 +539,7 @@
 				F1619EC71EE2770E0067BE84 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		F1619EC81EE2770E0067BE84 /* Build configuration list for PBXNativeTarget "DemoUITests" */ = {
 			isa = XCConfigurationList;
@@ -542,6 +548,7 @@
 				F1619ECA1EE2770E0067BE84 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

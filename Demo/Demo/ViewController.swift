@@ -10,9 +10,21 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    @IBOutlet weak var myLabel: UILabel!
+    @IBOutlet weak var texts: UIStackView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        let views = texts.subviews
+        print(views.count)
+        if views.count != 0 {
+            for view in views {
+                print(view.subviews.count)
+            }
+        }
+
+        Sequents.origin(origin: texts).start()
     }
 
     override func didReceiveMemoryWarning() {
