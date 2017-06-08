@@ -11,16 +11,16 @@ import UIKit
 
 open class Sequents {
     private var viewList = [UIView]()
-    private var startOffset: Int
-    private var duration: Int
-    private var delay: Int
+    private var startOffset: Double
+    private var duration: Double
+    private var delay: Double
     var direction: Direction
 //    private var animId: Int
 
     open class Builder {
-        fileprivate var offset = 100
-        fileprivate var duration = 500
-        fileprivate var delay = 0
+        fileprivate var offset = 1.0
+        fileprivate var duration = 1.0
+        fileprivate var delay = 0.0
         fileprivate var direction = Direction.forward
         fileprivate var origin: UIView
 
@@ -28,22 +28,22 @@ open class Sequents {
             self.origin = origin
         }
 
-        open func offset(offset: Int) -> Builder {
+        open func offset(_ offset: Double) -> Builder {
             self.offset = offset
             return self
         }
 
-        open func duration(duration: Int) -> Builder {
+        open func duration(_ duration: Double) -> Builder {
             self.duration = duration
             return self
         }
 
-        open func delay(delay: Int) -> Builder {
+        open func delay(_ delay: Double) -> Builder {
             self.delay = delay
             return self
         }
 
-        open func flow(flow: Direction) -> Builder {
+        open func flow(_ flow: Direction) -> Builder {
             self.direction = flow
             return self
         }
@@ -95,9 +95,9 @@ open class Sequents {
 
     private func arrangeLayouts(viewList: [UIView]) -> [UIView] {
         switch direction {
-            case Direction.backward:
-                return viewList.reversed()
-            default: break
+        case Direction.backward:
+            return viewList.reversed()
+        default: break
         }
         return viewList
     }
@@ -106,10 +106,14 @@ open class Sequents {
         let count = viewList.count
         for item in 0 ..< count {
             let view: UIView = viewList[item]
-            let offset = item * startOffset
+            let offset = Double(item) * startOffset
 
             // TODO: アニメーションの初期化。
 
+            view.alpha = 0
+            UIView.animate(withDuration: duration, delay: offset, animations: {
+                view.alpha = 1
+            })
         }
     }
 }
