@@ -12,26 +12,31 @@ class ViewController: UIViewController {
 
     @IBOutlet weak var myLabel: UILabel!
     @IBOutlet weak var texts: UIStackView!
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         let views = texts.subviews
         print(views.count)
         if views.count != 0 {
-            for view in views {
-                print(view.subviews.count)
+            for (index, view) in views.enumerated() {
+                view.alpha = 0
+                UIView.animate(withDuration: 0, delay: Double(index * 1), animations: {
+                    view.alpha = 1
+                }) { _ in
+                    UIView.animate(withDuration: 1, delay: 0.25, options: [.autoreverse, .repeat], animations: {
+                        view.backgroundColor = .red
+                    })
+                }
             }
         }
 
-        Sequents.origin(origin: texts).start()
+//        Sequents.origin(origin: texts).start()
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
-
 }
 

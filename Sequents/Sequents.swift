@@ -95,14 +95,21 @@ open class Sequents {
 
     private func arrangeLayouts(viewList: [UIView]) -> [UIView] {
         switch direction {
-        case Direction.backward:
-            return viewList.reversed()
-        default: break
+            case Direction.backward:
+                return viewList.reversed()
+            default: break
         }
         return viewList
     }
 
     private func setAnimation() {
+        let count = viewList.count
+        for item in 0 ..< count {
+            let view: UIView = viewList[item]
+            let offset = item * startOffset
 
+            // TODO: アニメーションの初期化。
+
+        }
     }
 }
