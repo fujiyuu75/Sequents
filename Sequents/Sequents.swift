@@ -24,7 +24,7 @@ open class Sequents {
         fileprivate var direction = Direction.forward
         fileprivate var origin: UIView
 
-        init(origin: UIView) {
+        init(_ origin: UIView) {
             self.origin = origin
         }
 
@@ -53,8 +53,8 @@ open class Sequents {
         }
     }
 
-    open static func origin(origin: UIView) -> Builder {
-        return Builder(origin: origin)
+    open static func origin(_ origin: UIView) -> Builder {
+        return Builder(origin)
     }
 
     init(builder: Builder) {
@@ -106,12 +106,13 @@ open class Sequents {
         let count = viewList.count
         for item in 0 ..< count {
             let view: UIView = viewList[item]
-            let offset = Double(item) * startOffset
+//            let offset = Double(item) * startOffset
+            let delay = (Double(item) * startOffset) + self.delay
 
             // TODO: アニメーションの初期化。
 
             view.alpha = 0
-            UIView.animate(withDuration: duration, delay: offset, animations: {
+            UIView.animate(withDuration: duration, delay: delay, animations: {
                 view.alpha = 1
             })
         }
