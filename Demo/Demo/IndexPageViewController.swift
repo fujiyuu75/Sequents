@@ -26,17 +26,19 @@ class IndexPageViewController: UIPageViewController {
     }
 
     func getFirst() -> FirstViewController {
-        return storyboard!.instantiateViewController(withIdentifier: "FirstViewController") as!FirstViewController
+        return storyboard!.instantiateViewController(withIdentifier: "FirstViewController") as! FirstViewController
     }
+
     func getSecond() -> SecondViewController {
         return storyboard!.instantiateViewController(withIdentifier: "SecondViewController") as! SecondViewController
     }
+
     func getThird() -> ThirdViewController {
-        return storyboard!.instantiateViewController(withIdentifier: "ThirdViewController") as!ThirdViewController
+        return storyboard!.instantiateViewController(withIdentifier: "ThirdViewController") as! ThirdViewController
     }
 }
 
-extension IndexPageViewController : UIPageViewControllerDataSource {
+extension IndexPageViewController: UIPageViewControllerDataSource {
 
     func pageViewController(_ pageViewController: UIPageViewController, viewControllerBefore viewController: UIViewController) -> UIViewController? {
         if viewController.isKind(of: ThirdViewController.self) {
