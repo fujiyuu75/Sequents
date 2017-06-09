@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  FirstViewController.swift
 //  Demo
 //
 //  Created by 藤川 裕一 on 2017/06/03.
@@ -8,13 +8,15 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class FirstViewController: UIViewController {
 
     @IBOutlet weak var sts: UIStackView!
 
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+
+        print("FirstViewController")
 
 //        if views.count != 0 {
 //            for (index, view) in views.enumerated() {
@@ -30,7 +32,7 @@ class ViewController: UIViewController {
 //            }
 //        }
 
-        Sequents.origin(sts).delay(0.5).duration(2.5).flow(Direction.backward).start()
+//        Sequents.origin(sts).delay(0.5).duration(2.5).flow(Direction.backward).start()
     }
 
     override func didReceiveMemoryWarning() {
