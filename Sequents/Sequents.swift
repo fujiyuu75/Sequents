@@ -67,6 +67,8 @@ open class Sequents {
         let origin: UIView = builder.origin
         print("origin is ")
         print(origin)
+        print("origin has view count ")
+        print(origin.subviews.count)
         fetchChildLayouts(views: origin)
 
         self.viewList = arrangeLayouts(viewList: viewList)

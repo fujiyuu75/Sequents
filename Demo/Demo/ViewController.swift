@@ -10,28 +10,27 @@ import UIKit
 
 class ViewController: UIViewController {
 
-    @IBOutlet weak var myLabel: UILabel!
-    @IBOutlet weak var texts: UIStackView!
+    @IBOutlet weak var sts: UIStackView!
 
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        let views = texts.subviews
-        print(views.count)
-        if views.count != 0 {
-            for (index, view) in views.enumerated() {
-                view.alpha = 0
-                UIView.animate(withDuration: 0, delay: Double(index * 1), animations: {
-                    view.alpha = 1
-                }) { _ in
-                    UIView.animate(withDuration: 1, delay: 0.25, options: [.autoreverse, .repeat], animations: {
-                        view.backgroundColor = .red
-                    })
-                }
-            }
-        }
 
-//        Sequents.origin(origin: texts).start()
+//        if views.count != 0 {
+//            for (index, view) in views.enumerated() {
+//                view.alpha = 0
+//                UIView.animate(withDuration: 1, delay: Double(index * 1), animations: {
+//                    view.alpha = 1
+////                    // アフィンをつくって組み合わせる
+////                    let affine1 = CGAffineTransform(scaleX: 2.0, y: 2.0)
+////                    let affine2 = CGAffineTransform(rotationAngle: 45.0)
+//////                    affine1.concatenating(affine2)
+////                    view.transform = affine1.concatenating(affine2)
+//                })
+//            }
+//        }
+
+        Sequents.origin(sts).delay(0.5).duration(2.5).flow(Direction.backward).start()
     }
 
     override func didReceiveMemoryWarning() {
