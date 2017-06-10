@@ -15,7 +15,11 @@ class SecondViewController: UIViewController {
 
         // Do any additional setup after loading the view.
 
+        self.view.backgroundColor = .yellow
+
         print("SecondViewController")
+
+        Sequents.origin(self.view).start()
     }
 
     override func didReceiveMemoryWarning() {
