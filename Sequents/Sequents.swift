@@ -116,7 +116,12 @@ open class Sequents {
             view.alpha = 0
             UIView.animate(withDuration: duration, delay: delay, animations: {
                 view.alpha = 1
-            })
+                view.center.y += 200.0
+            }) { _ in
+                UIView.transition(with: view, duration: self.duration, options: [.transitionFlipFromLeft], animations: nil, completion: nil)
+            }
+
+//            UIView.transition(with: view, duration: duration, options: [.transitionFlipFromLeft], animations: nil, completion: nil)
         }
     }
 }
