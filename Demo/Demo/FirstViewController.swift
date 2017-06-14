@@ -16,7 +16,7 @@ class FirstViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
 
-        self.view.backgroundColor = .red
+//        self.view.backgroundColor = .red
         
         print("FirstViewController")
 
@@ -34,7 +34,7 @@ class FirstViewController: UIViewController {
 //            }
 //        }
 
-        Sequents.origin(self.view).delay(0.5).duration(2.5).flow(Direction.backward).start()
+//        Sequents.origin(self.view).duration(0.5).flow(Direction.backward).start()
     }
 
     override func didReceiveMemoryWarning() {
