@@ -21,6 +21,7 @@ class AnimationViewController: UIViewController, UIPickerViewDataSource, UIPicke
     func pickerView(_ namePickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
         return list[component].count
     }
+
     //表示する文字列を指定する
     //PickerViewに表示する配列の要素数を設定する
     func pickerView(_ namePickerview: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
@@ -28,8 +29,12 @@ class AnimationViewController: UIViewController, UIPickerViewDataSource, UIPicke
     }
 
     //ラベル表示
-    func pickerView(namePickerview: UIPickerView, didSelectRow row: Int, inComponent component: Int){
-//        nameLabel.text = list[row]
+    func pickerView(_ namePickerview: UIPickerView, didSelectRow row: Int, inComponent component: Int){
+        // 選ばれた項目
+        let item = list[component][row]
+
+        print(item + "が選ばれた。")
+        print(row)
     }
 
     override func viewDidLoad() {
