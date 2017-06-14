@@ -10,6 +10,7 @@ import UIKit
 
 class AnimationViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate {
 
+    @IBOutlet weak var stacks: UIStackView!
     @IBOutlet weak var picker: UIPickerView!
 
     var list = [["fade", "rotate", "bounce"]]
@@ -35,6 +36,12 @@ class AnimationViewController: UIViewController, UIPickerViewDataSource, UIPicke
 
         print(item + "が選ばれた。")
         print(row)
+
+        switch row {
+            case 0:
+                Sequents.origin(self.stacks).start()
+            default: break
+        }
     }
 
     override func viewDidLoad() {

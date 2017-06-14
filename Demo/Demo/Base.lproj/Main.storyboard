@@ -68,6 +68,7 @@
                     </view>
                     <connections>
                         <outlet property="picker" destination="IN5-0L-ZQB" id="9TF-N2-Uwn"/>
+                        <outlet property="stacks" destination="pBt-qc-X8z" id="u0e-64-hfZ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
