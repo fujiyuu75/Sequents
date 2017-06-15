@@ -24,7 +24,7 @@ open class Sequents {
         fileprivate var delay = 0.0
         fileprivate var direction = Direction.forward
         fileprivate var origin: UIView
-        fileprivate var animation = Animation.fade
+        fileprivate var animation = Animation.fadeIn
 
         init(_ origin: UIView) {
             self.origin = origin
@@ -122,13 +122,7 @@ open class Sequents {
             // TODO: アニメーションの初期化。
 
             switch animation {
-            case .fade:
-                view.alpha = 0
-                UIView.animate(withDuration: duration, delay: delay, animations: {
-                    view.alpha = 1
-//                view.center.y += 200.0
-                })
-            case .bounce:
+            case .bounceIn:
                 view.alpha = 0
                 UIView.animate(withDuration: duration, delay: delay, animations: {
                     view.alpha = 1
@@ -136,6 +130,26 @@ open class Sequents {
                 }) { _ in
                     UIView.transition(with: view, duration: self.duration, options: [.transitionFlipFromLeft], animations: nil, completion: nil)
                 }
+            case .fadeIn:
+                view.alpha = 0
+                UIView.animate(withDuration: duration, delay: delay, animations: {
+                    view.alpha = 1
+//                view.center.y += 200.0
+                })
+            case .fadeInDown:
+                view.alpha = 0
+                view.center.y += 50.0
+                UIView.animate(withDuration: duration, delay: delay, animations: {
+                    view.alpha = 1
+                    view.center.y -= 50.0
+                })
+            case .fadeInUp:
+                view.alpha = 0
+                view.center.y -= 50.0
+                UIView.animate(withDuration: duration, delay: delay, animations: {
+                    view.alpha = 1
+                    view.center.y += 50.0
+                })
             default: break
             }
 //            UIView.transition(with: view, duration: duration, options: [.transitionFlipFromLeft], animations: nil, completion: nil)

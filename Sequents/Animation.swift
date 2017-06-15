@@ -9,7 +9,11 @@
 import Foundation
 
 public enum Animation {
-    case fade
-    case rotate
-    case bounce
+    case bounceIn
+    case fadeIn
+    case fadeInDown
+    case fadeInUp
+    case fadeInLeft
+    case fadeInRight
+    case rotateIn
 }
