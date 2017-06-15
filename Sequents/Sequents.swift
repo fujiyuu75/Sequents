@@ -16,7 +16,6 @@ open class Sequents {
     private var delay: Double
     var direction: Direction
     var animation: Animation
-//    private var animId: Int
 
     open class Builder {
         fileprivate var offset = 0.5
@@ -70,13 +69,8 @@ open class Sequents {
         self.delay = builder.delay
         self.direction = builder.direction
         self.animation = builder.animation
-//        self.animId = builder.animId
 
         let origin: UIView = builder.origin
-        print("origin is ")
-        print(origin)
-        print("origin has view count ")
-        print(origin.subviews.count)
         fetchChildLayouts(views: origin)
 
         self.viewList = arrangeLayouts(viewList: viewList)
@@ -97,7 +91,6 @@ open class Sequents {
             if view.subviews.count != 0 {
                 fetchChildLayouts(views: view)
             } else if !view.isHidden {
-                // TODO: いったんviewを非表示にさせる。
                 viewList.append(view)
             }
         }
@@ -116,20 +109,10 @@ open class Sequents {
         let count = viewList.count
         for item in 0..<count {
             let view: UIView = viewList[item]
-//            let offset = Double(item) * startOffset
             let delay = (Double(item) * startOffset) + self.delay
 
-            // TODO: アニメーションの初期化。
-
             switch animation {
-            case .bounceIn:
-                view.alpha = 0
-                UIView.animate(withDuration: duration, delay: delay, animations: {
-                    view.alpha = 1
-                    //                view.center.y += 200.0
-                }) { _ in
-                    UIView.transition(with: view, duration: self.duration, options: [.transitionFlipFromLeft], animations: nil, completion: nil)
-                }
+            case .bounceIn: break
             case .fadeIn:
                 view.alpha = 0
                 UIView.animate(withDuration: duration, delay: delay, animations: {
@@ -163,9 +146,9 @@ open class Sequents {
                     view.alpha = 1
                     view.center.x -= 50.0
                 })
+            case .rotateIn: break
             default: break
             }
-//            UIView.transition(with: view, duration: duration, options: [.transitionFlipFromLeft], animations: nil, completion: nil)
         }
     }
 }
