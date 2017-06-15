@@ -13,7 +13,7 @@ class AnimationViewController: UIViewController, UIPickerViewDataSource, UIPicke
     @IBOutlet weak var stacks: UIStackView!
     @IBOutlet weak var picker: UIPickerView!
 
-    var list = [["bounceIn", "fadeIn", "fadeInDown", "fadeInUp", "fadeInLeft", "fadeInRight", "rotateIn"]]
+    var list = [["fadeIn", "fadeInDown", "fadeInUp", "fadeInLeft", "fadeInRight"]]
 
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         return list.count
@@ -30,19 +30,15 @@ class AnimationViewController: UIViewController, UIPickerViewDataSource, UIPicke
     func pickerView(_ namePickerview: UIPickerView, didSelectRow row: Int, inComponent component: Int){
         switch row {
         case 0:
-            Sequents.origin(self.stacks).anim(Animation.bounceIn).start()
-        case 1:
             Sequents.origin(self.stacks).anim(Animation.fadeIn).start()
-        case 2:
+        case 1:
             Sequents.origin(self.stacks).anim(Animation.fadeInDown).start()
-        case 3:
+        case 2:
             Sequents.origin(self.stacks).anim(Animation.fadeInUp).start()
-        case 4:
+        case 3:
             Sequents.origin(self.stacks).anim(Animation.fadeInLeft).start()
-        case 5:
+        case 4:
             Sequents.origin(self.stacks).anim(Animation.fadeInRight).start()
-        case 6:
-            Sequents.origin(self.stacks).anim(Animation.rotateIn).start()
         default: break
         }
     }
