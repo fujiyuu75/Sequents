@@ -134,7 +134,6 @@ open class Sequents {
                 view.alpha = 0
                 UIView.animate(withDuration: duration, delay: delay, animations: {
                     view.alpha = 1
-//                view.center.y += 200.0
                 })
             case .fadeInDown:
                 view.alpha = 0
@@ -149,6 +148,20 @@ open class Sequents {
                 UIView.animate(withDuration: duration, delay: delay, animations: {
                     view.alpha = 1
                     view.center.y += 50.0
+                })
+            case .fadeInLeft:
+                view.alpha = 0
+                view.center.x -= 50.0
+                UIView.animate(withDuration: duration, delay: delay, animations: {
+                    view.alpha = 1
+                    view.center.x += 50.0
+                })
+            case .fadeInRight:
+                view.alpha = 0
+                view.center.x += 50.0
+                UIView.animate(withDuration: duration, delay: delay, animations: {
+                    view.alpha = 1
+                    view.center.x -= 50.0
                 })
             default: break
             }
