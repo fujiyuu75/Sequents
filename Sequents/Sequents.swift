@@ -112,7 +112,6 @@ open class Sequents {
             let delay = (Double(item) * startOffset) + self.delay
 
             switch animation {
-            case .bounceIn: break
             case .fadeIn:
                 view.alpha = 0
                 UIView.animate(withDuration: duration, delay: delay, animations: {
@@ -146,7 +145,6 @@ open class Sequents {
                     view.alpha = 1
                     view.center.x -= 50.0
                 })
-            case .rotateIn: break
             default: break
             }
         }
