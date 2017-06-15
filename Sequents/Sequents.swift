@@ -55,7 +55,7 @@ open class Sequents {
         }
 
         open func start() -> Sequents {
-            return Sequents(builder: self)
+            return Sequents(self)
         }
     }
 
@@ -63,7 +63,7 @@ open class Sequents {
         return Builder(origin)
     }
 
-    init(builder: Builder) {
+    init(_ builder: Builder) {
         self.startOffset = builder.offset
         self.duration = builder.duration
         self.delay = builder.delay
