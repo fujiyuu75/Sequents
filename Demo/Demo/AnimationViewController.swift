@@ -23,20 +23,11 @@ class AnimationViewController: UIViewController, UIPickerViewDataSource, UIPicke
         return list[component].count
     }
 
-    //表示する文字列を指定する
-    //PickerViewに表示する配列の要素数を設定する
     func pickerView(_ namePickerview: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
         return list[component][row]
     }
 
-    //ラベル表示
     func pickerView(_ namePickerview: UIPickerView, didSelectRow row: Int, inComponent component: Int){
-        // 選ばれた項目
-        let item = list[component][row]
-
-        print(item + "が選ばれた。")
-        print(row)
-
         switch row {
         case 0:
             Sequents.origin(self.stacks).anim(Animation.bounceIn).start()
