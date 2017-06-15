@@ -15,14 +15,16 @@ open class Sequents {
     private var duration: Double
     private var delay: Double
     var direction: Direction
+    var animation: Animation
 //    private var animId: Int
 
     open class Builder {
-        fileprivate var offset = 1.0
-        fileprivate var duration = 1.0
+        fileprivate var offset = 0.5
+        fileprivate var duration = 0.5
         fileprivate var delay = 0.0
         fileprivate var direction = Direction.forward
         fileprivate var origin: UIView
+        fileprivate var animation = Animation.fade
 
         init(_ origin: UIView) {
             self.origin = origin
@@ -48,6 +50,11 @@ open class Sequents {
             return self
         }
 
+        open func anim(_ anim: Animation) -> Builder {
+            self.animation = anim
+            return self
+        }
+
         open func start() -> Sequents {
             return Sequents(builder: self)
         }
@@ -62,6 +69,7 @@ open class Sequents {
         self.duration = builder.duration
         self.delay = builder.delay
         self.direction = builder.direction
+        self.animation = builder.animation
 //        self.animId = builder.animId
 
         let origin: UIView = builder.origin
@@ -106,21 +114,30 @@ open class Sequents {
 
     private func setAnimation() {
         let count = viewList.count
-        for item in 0 ..< count {
+        for item in 0..<count {
             let view: UIView = viewList[item]
 //            let offset = Double(item) * startOffset
             let delay = (Double(item) * startOffset) + self.delay
 
             // TODO: アニメーションの初期化。
 
-            view.alpha = 0
-            UIView.animate(withDuration: duration, delay: delay, animations: {
-                view.alpha = 1
+            switch animation {
+            case .fade:
+                view.alpha = 0
+                UIView.animate(withDuration: duration, delay: delay, animations: {
+                    view.alpha = 1
 //                view.center.y += 200.0
-            }) { _ in
-                UIView.transition(with: view, duration: self.duration, options: [.transitionFlipFromLeft], animations: nil, completion: nil)
+                })
+            case .bounce:
+                view.alpha = 0
+                UIView.animate(withDuration: duration, delay: delay, animations: {
+                    view.alpha = 1
+                    //                view.center.y += 200.0
+                }) { _ in
+                    UIView.transition(with: view, duration: self.duration, options: [.transitionFlipFromLeft], animations: nil, completion: nil)
+                }
+            default: break
             }
-
 //            UIView.transition(with: view, duration: duration, options: [.transitionFlipFromLeft], animations: nil, completion: nil)
         }
     }

@@ -38,8 +38,12 @@ class AnimationViewController: UIViewController, UIPickerViewDataSource, UIPicke
         print(row)
 
         switch row {
-            case 0:
-                Sequents.origin(self.stacks).start()
+        case 0:
+            Sequents.origin(self.stacks).anim(Animation.fade).start()
+        case 1:
+            Sequents.origin(self.stacks).anim(Animation.rotate).start()
+        case 2:
+            Sequents.origin(self.stacks).anim(Animation.bounce).start()
             default: break
         }
     }
