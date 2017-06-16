@@ -145,7 +145,6 @@ open class Sequents {
                     view.alpha = 1
                     view.center.x -= 50.0
                 })
-            default: break
             }
         }
     }
