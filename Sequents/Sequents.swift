@@ -18,7 +18,7 @@ open class Sequents {
     var animation: Animation
 
     open class Builder {
-        fileprivate var offset = 0.5
+        fileprivate var offset = 0.2
         fileprivate var duration = 0.5
         fileprivate var delay = 0.0
         fileprivate var direction = Direction.forward
