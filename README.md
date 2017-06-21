@@ -1,5 +1,7 @@
 # Sequents
 
+<img src=https://img.shields.io/cocoapods/p/Sequents.svg> <img src=https://img.shields.io/cocoapods/v/Sequents.svg> <img src=https://img.shields.io/github/license/fujiyuu75/Sequents.svg>
+
 <img src=https://github.com/fujiyuu75/sequents/blob/res/demo.gif width=400px>
 
 Sequents is a library that starts animation continuously for multiple views at regular intervals.
