@@ -6,6 +6,8 @@
 
 Sequents is a library that starts animation continuously for multiple views at regular intervals.
 
+Continuous animation library like Sequents is also available for [Android](https://github.com/fujiyuu75/Sequent).
+
 ```
 # Just write a line. Default animation is Fadein.
 Sequents.origin(layout).start()
