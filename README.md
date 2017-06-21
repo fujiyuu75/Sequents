@@ -1,5 +1,7 @@
 # Sequents
 
+<img src=https://github.com/fujiyuu75/sequents/blob/res/demo.gif width=400px>
+
 Sequents is a library that starts animation continuously for multiple views at regular intervals.
 
 ```
